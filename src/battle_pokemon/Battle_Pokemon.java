@@ -1,21 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package battle_pokemon;
 
-/**
- *
- * @author nicol
- */
-public class Battle_Pokemon {
+import UI_Battle_Pokemon.UI_Loading;
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.net.URL;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Battle_Pokemon {
+    
+        URL som =  Battle_Pokemon .class.getResource("musica.wav");
+        AudioClip Som = Applet.newAudioClip(som);
+        
+        public void play(){
+            Battle_Pokemon tocar = new Battle_Pokemon();
+            tocar.Som.stop();
+            tocar.Som.play();
+        }
+        
+public static void main(String[] args) {
+        
+     Battle_Pokemon tocar = new Battle_Pokemon();
+     tocar.Som.stop();
+     tocar.Som.loop();
+        
+       UI_Loading loading = new UI_Loading();
+       loading.setVisible(true);
     }
     
 }
